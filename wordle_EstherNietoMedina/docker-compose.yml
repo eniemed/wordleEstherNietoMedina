@@ -1,0 +1,17 @@
+version: "3"
+services:
+
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordle
+    volumes:
+      - /com/example/wordle_esthernietomedina/wordleDB.sql
+    ports:
+      - 3309:3309
+
+  adminer:
+    image: adminer
+    ports:
+      - 8888:8080
